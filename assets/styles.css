@@ -16,4 +16,44 @@ html.Div(
           ],
         className="nav")
 
-        
+ html.Div(
+          [
+            html.Div(
+                  [  # Logo
+                    # Company Name
+                  ],
+                className="header"),
+            html.Div( #Description
+              id="description", className="decription_ticker"),
+            html.Div([
+                # Stock price plot
+            ], id="graphs-content"),
+            html.Div([
+                # Indicator plot
+            ], id="main-content"),
+            html.Div([
+                # Forecast plot
+            ], id="forecast-content")
+          ],
+        className="content")       
+
+        html.Div(
+            [
+              html.Div(
+                    [  # Logo
+                      # Company Name
+                    ],
+                  className="header"),
+              html.Div( #Description
+                id="description", className="decription_ticker"),
+              html.Div([
+                  # Stock price plot
+              ], id="graphs-content"),
+              html.Div([
+                  # Indicator plot
+              ], id="main-content"),
+              html.Div([
+                  # Forecast plot
+              ], id="forecast-content")
+            ],
+          className="content")
