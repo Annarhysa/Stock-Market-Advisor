@@ -1,3 +1,4 @@
+from dash.dependencies import Input, Output
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -14,65 +15,13 @@ app.layout = html.Div(children = [
       html.Div(id="output-graph")
 ])
 
-html.Div(
-          [
-            html.P("Welcome to the Stock Dash App!", className="start"),
-            html.Div([
-              # stock code input
-            ]),
-            html.Div([
-              # Date range picker input
-            ]),
-            html.Div([
-              # Stock price button
-              # Indicators button
-              # Number of days of forecast input
-              # Forecast button
-            ]),
-          ],
-        className="nav")
 
-html.Div(
-          [
-            html.Div(
-                  [  # Logo
-                    # Company Name
-                  ],
-                className="header"),
-            html.Div( #Description
-              id="description", className="decription_ticker"),
-            html.Div([
-                # Stock price plot
-            ], id="graphs-content"),
-            html.Div([
-                # Indicator plot
-            ], id="main-content"),
-            html.Div([
-                # Forecast plot
-            ], id="forecast-content")
-          ],
-        className="content")       
+@app.callback(
+    Output(component_id ="output-graph", 
+    component_property = "children"),
+    [Input(component_id = "input", 
+    component_property = "value")])
 
-        html.Div(
-            [
-              html.Div(
-                    [  # Logo
-                      # Company Name
-                    ],
-                  className="header"),
-              html.Div( #Description
-                id="description", className="decription_ticker"),
-              html.Div([
-                  # Stock price plot
-              ], id="graphs-content"),
-              html.Div([
-                  # Indicator plot
-              ], id="main-content"),
-              html.Div([
-                  # Forecast plot
-              ], id="forecast-content")
-            ],
-          className="content")
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
+def update_value(input_data):
+    start = dt.datetime(2010, 1, 1)
+    end = dt.datetime.now()
