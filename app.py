@@ -1,9 +1,9 @@
-from dash.dependencies import Input, Output
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from datetime import datetime as dt
+import datetime
 import pandas_datareader.data as web
+from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
 
@@ -18,14 +18,12 @@ app.layout = html.Div(children = [
 
 
 @app.callback(
-    Output(component_id ="output-graph", 
-    component_property = "children"),
-    [Input(component_id = "input", 
-    component_property = "value")])
+    Output(component_id ="output-graph", component_property = 'children'),
+    [Input(component_id = "input", component_property = "value")])
 
 def update_value(input_data):
-    start = dt.datetime(2010, 1, 1)
-    end = dt.datetime.now()
+    start = datetime.datetime(2010, 1, 1)
+    end = datetime.datetime.now()
     df = web.DataReader(input_data, 'yahoo', start, end)
     return dcc.Graph(id = "demo", figure ={'data': 
     [{'x': df.index, 'y': df.Close, 'type': 'line', 'name': input_data},],
