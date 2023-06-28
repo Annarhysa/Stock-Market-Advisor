@@ -30,3 +30,7 @@ def update_value(input_data):
     return dcc.Graph(id = "demo", figure ={'data': 
     [{'x': df.index, 'y': df.Close, 'type': 'line', 'name': input_data},],
     'layout': {'title': input_data}})
+
+
+if __name__ == "__main__":
+    app.run_server(debug=True)
