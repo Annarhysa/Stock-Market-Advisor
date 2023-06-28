@@ -7,7 +7,12 @@ app = dash.Dash(__name__)
 
 server = app.server
 
-app.layout = html.Div([item1, item2])
+app.layout = html.Div(children = [
+      html.H1("Stock Vizualization Dashboard"),
+      html.H4("Please enter the stock name"),
+      dcc.Input(id="input", value ='', type='text'),
+      html.Div(id="output-graph")
+])
 
 html.Div(
           [
