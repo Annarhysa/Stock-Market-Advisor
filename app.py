@@ -1,5 +1,5 @@
 import dash
-import dash_core_components as dcc, html
+from dash import dcc, html
 import datetime
 import pandas_datareader.data as web
 from dash.dependencies import Input, Output
