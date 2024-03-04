@@ -13,4 +13,20 @@ import numpy as np
 from sklearn.svm import LinearSVR
 from datetime import date, timedelta
 
-#def prediciton(stock, n_days):
+def prediciton(stock, n_days):
+    #loading the user specified stock from yfinance
+    df = yf.download(stock, period='60d')
+    df.reset_index(inplace = True)
+    df['Day'] = df.index
+
+    #storing the days in a list
+    days = []
+    for i in range(len(df.Day)):
+        days.append([i])
+    
+    #splitting the dataste in features and targets
+    x = days
+    y = df[['Close']]
+    
+
+
