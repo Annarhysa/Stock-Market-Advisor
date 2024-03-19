@@ -1,4 +1,4 @@
-from dash import dcc
+import dash_core_components as dcc
 import dash_html_components as html
 import dash
 from datetime import datetime as dt
@@ -45,7 +45,7 @@ app.layout = html.Div(
         html.Div(
             [
                 # Navigation
-                html.P("Welcome to the Stock Dash App!", className="start"),
+                html.P("Welcome to Market Minder", className="start"),
                 html.Div([
                     html.P("Input stock code: "),
                     html.Div([
@@ -100,6 +100,7 @@ app.layout = html.Div(
 
 
 # callback for company info
+
 @app.callback([
     Output("description", "children"),
     Output("logo", "src"),
@@ -110,7 +111,7 @@ app.layout = html.Div(
 ], [Input("submit", "n_clicks")], [State("dropdown_tickers", "value")])
 def update_data(n, val):  # inpur parameter(s)
     if n == None:
-        return "Hey there! Please enter a legitimate stock code to get details.", "https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png", "Stonks", None, None, None
+        return "Stock investments provide one of the highest returns in the market. Even though they are volatile in nature, one can visualise share prices and other statistical factors which helps the keen investors carefully decide on which company they want to spend their earnings on. Developing this Market Minder using the Dash library (of Python), we have make dynamic plots of the financial data of a specific company by using the tabular data provided by yfinance python library. On top of it we have used SVR machine learning algorithm to predict the future closing prices of stocks.", "/assets/stonk-img.png", "Market Minder", None, None, None
         # raise PreventUpdate
     else:
         if val == None:
@@ -119,9 +120,8 @@ def update_data(n, val):  # inpur parameter(s)
             ticker = yf.Ticker(val)
             inf = ticker.info
             df = pd.DataFrame().from_dict(inf, orient="index").T
-            df[['logo_url', 'shortName', 'longBusinessSummary']]
-            return df['longBusinessSummary'].values[0], df['logo_url'].values[
-                0], df['shortName'].values[0], None, None, None
+            df[['shortName', 'longBusinessSummary']]
+            return df['longBusinessSummary'].values[0], None, df['shortName'].values[0], None, None, None
 
 
 # callback for stocks graphs
