@@ -18,39 +18,52 @@ body {
   width: 25vw;
   align-items: center;
   display: flex;
+  height: 800px;
   justify-content: flex-start;
-  height: 1000px;
   flex-direction: column;
   background-color: #0f3057; /* Dark blue background */
+  padding: 2rem;
+  color: #fff; /* White text */
 }
 
 .content {
   width: 65vw;
-  padding: 1rem 5rem;
+  padding: 2rem;
 }
 
 .start {
-  margin-top: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   text-align: center;
-  font-size: larger;
+  font-size: 30px;
   color: #f2a154; /* Orange text */
 }
 
 .input-place p {
   color: #fff; /* White text */
-  font-size: larger;
+  font-size: 1.2rem;
 }
 
 .form {
   display: flex;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  height: 2.5rem; /* Increased height */
+  height: 3rem; /* Increased height */
+}
+
+#n_days{
+  flex: 1;
+  padding: 0.5rem;
+  margin-left: 50px;
+  border: none;
+  width: 50px;
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text */
+  font-size: 1rem; /* Font size */
 }
 
 .form input[type="text"] {
-  width: 10rem; /* Adjust width as needed */
+  flex: 1;
   padding: 0.5rem;
   border: none;
   border-radius: 5px; /* Rounded corners */
@@ -60,7 +73,8 @@ body {
 }
 
 .form button {
-  width: 5rem;
+  width: 7rem;
+  margin-left: 1rem; /* Increased margin */
   background-color: #f2a154; /* Orange button */
   color: #fff; /* White text */
   border: none;
@@ -74,33 +88,21 @@ body {
 }
 
 .buttons {
-  margin: 2rem;
-  width: 100%;
+  margin: 2rem 0;
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: space-around;
-}
-
-#forecast {
-  margin-top: 2rem;
-  height: 2.5rem; /* Increased height */
-}
-
-#n_days {
-  height: 2.5rem; /* Increased height */
-  margin-top: 2rem;
+  flex-direction: column; /* Display buttons in a column */
 }
 
 .buttons button {
-  width: 7.5rem;
-  height: 2.5rem;
+  width: 10rem;
+  height: 3rem;
   border: none;
   background-color: #f2a154; /* Orange button */
   color: #fff; /* White text */
   border-radius: 5px; /* Rounded corners */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition */
+  margin-bottom: 1rem; /* Add margin between buttons */
 }
 
 .buttons button:hover {
@@ -116,11 +118,11 @@ body {
 
 .header p {
   font-size: 2rem; /* Decreased font size */
-  margin-left: 1.5rem; /* Decreased margin */
-  color: #0f3057; /* Dark blue text */
+  margin-left: 1rem; /* Decreased margin */
+  color: #1F2122; /* Dark blue text */
 }
 
 #logo {
-  max-width: 10rem; /* Decreased max-width */
+  max-width: 200px; /* Enlarged logo */
   height: auto;
 }

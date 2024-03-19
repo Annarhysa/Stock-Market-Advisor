@@ -45,7 +45,7 @@ app.layout = html.Div(
         html.Div(
             [
                 # Navigation
-                html.P("Welcome to Market Minder", className="start"),
+                html.P("Market Minder Dashboard", className="start"),
                 html.Div([
                     html.P("Input stock code: "),
                     html.Div([
@@ -71,7 +71,7 @@ app.layout = html.Div(
                                 id="indicators"),
                     dcc.Input(id="n_days",
                               type="text",
-                              placeholder="number of days"),
+                              placeholder="days"),
                     html.Button(
                         "Forecast", className="forecast-btn", id="forecast")
                 ],
@@ -111,7 +111,7 @@ app.layout = html.Div(
 ], [Input("submit", "n_clicks")], [State("dropdown_tickers", "value")])
 def update_data(n, val):  # inpur parameter(s)
     if n == None:
-        return "Stock investments provide one of the highest returns in the market. Even though they are volatile in nature, one can visualise share prices and other statistical factors which helps the keen investors carefully decide on which company they want to spend their earnings on. Developing this Market Minder using the Dash library (of Python), we have make dynamic plots of the financial data of a specific company by using the tabular data provided by yfinance python library. On top of it we have used SVR machine learning algorithm to predict the future closing prices of stocks.", "/assets/stonk-img.png", "Market Minder", None, None, None
+        return "Stock investments provide one of the highest returns in the market. Even though they are volatile in nature, one can visualise share prices and other statistical factors which helps the keen investors carefully decide on which company they want to spend their earnings on. Developing this Market Minder using the Dash library (of Python), we have make dynamic plots of the financial data of a specific company by using the tabular data provided by yfinance python library. On top of it we have used SVR machine learning algorithm to predict the future closing prices of stocks.", "/assets/logo.png", "Market Minder: Your Insightful Investing Companion!", None, None, None
         # raise PreventUpdate
     else:
         if val == None:
