@@ -18,12 +18,12 @@ body {
   width: 25vw;
   align-items: center;
   display: flex;
-  height: 800px;
+  height: 3000px;
   justify-content: flex-start;
   flex-direction: column;
   background-color: #0f3057; /* Dark blue background */
   padding: 2rem;
-  color: #fff; /* White text */
+  color: #000000; /* White text */
 }
 
 .content {
@@ -39,7 +39,7 @@ body {
 }
 
 .input-place p {
-  color: #fff; /* White text */
+  color: #ffffff; /* White text */
   font-size: 1.2rem;
 }
 
